@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testing</title>
+  </head>
+  <body>
+    <h1>The Document Object</h1>
+    <h2>The createTextNode() Method</h2>
+
+    <p>Create a text node:</p>
+
+    <script>
+      // const textNode = document.createTextNode("Hello World " + 1+2);
+      // document.body.appendChild(textNode);
+      for (var i = 0; i < 5; i++) {
+        var btn = document.createElement("button");
+        btn.appendChild(document.createTextNode("Button " + i));
+        btn.addEventListener(
+          "click",
+          (function (i) {
+            return function () {
+              console.log(i);
+            };
+          })(i)
+        );
+        document.body.appendChild(btn);
+      }
+    </script>
+  </body>
+</html>
+
+<!-- The createTextNode() method is used to create a TextNode which contains an element node and a text node. It is used to provide text to an element. This method contains the text values as parameter which is of string type -->
