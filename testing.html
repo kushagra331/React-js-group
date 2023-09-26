@@ -14,17 +14,21 @@
     <script>
       // const textNode = document.createTextNode("Hello World " + 1+2);
       // document.body.appendChild(textNode);
-      for (var i = 0; i < 5; i++) { i=5
+      for (var i = 0; i < 5; i++) {
         var btn = document.createElement("button");
         btn.appendChild(document.createTextNode("Button " + i));
-        btn.addEventListener("click", function () {
-          console.log(i);
-        });
+        btn.addEventListener(
+          "click",
+          (function (i) {
+            return function () {
+              console.log(i);
+            };
+          })(i)
+        );
         document.body.appendChild(btn);
       }
     </script>
   </body>
 </html>
-
 
 <!-- The createTextNode() method is used to create a TextNode which contains an element node and a text node. It is used to provide text to an element. This method contains the text values as parameter which is of string type -->
